@@ -336,6 +336,21 @@ blockquote cite {
 
 blockquote cite a { font-weight: normal; }
 
+p.important {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1.75em 0 1.75em -2.2em;
+    padding: 0 0 0 1.75em;
+    border-left: rgb(0, 247, 186) 0.4em solid;
+    font-style: italic;
+}
+
+p.important::before {
+    content: "Ważne: ";
+    font-style: normal;
+    font-weight: bold;
+}
+
 mark {
     background-color: #fdffb6;
 }
@@ -582,16 +597,21 @@ body.nav-opened .site-wrapper {
     position: relative;
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     margin-bottom: 5rem;
     text-align: center;
-    background: #222 no-repeat center center;
-    background-size: cover;
+    background: #262626 no-repeat center center;
+    background-size: contain;
     overflow: hidden;
+}
+
+.home-template .main-header {
+    background-size: cover;
 }
 
 .main-header .inner {
     width: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .main-nav {
@@ -855,12 +875,12 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
-    height: 38px;
+    height: 100px;
     padding: 1px 0 5px 0;
     width: auto;
 }
 
-.menu-button {
+.menu-button, .home-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -879,17 +899,30 @@ body.nav-opened .nav {
     border-radius: 3px;
     transition: all 0.5s ease;
 }
-.menu-button:before {
+.home-button {
+    float: left;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+.no-cover .home-button {
+    border-color: #BFC8CD;
+    color: #9EABB3;
+}
+.no-cover .home-button:hover {
+    border-color: #555;
+    color: #555;
+}
+.menu-button:before, .home-button:before {
     font-size: 12px;
     font-weight: bold;
     margin-right: 6px;
     position: relative;
     top: 1px;
 }
-.menu-button:hover {
+.menu-button:hover, .home-button:hover {
     background: #fff;
 }
-.menu-button:focus {
+.menu-button:focus, .home-button:focus {
     outline: 0;
 }
 
@@ -1073,7 +1106,7 @@ body.page-template .post-title {
     min-height: 77px;
 }
 
-.post-date {
+.post-date, .post-comments-count {
     display: inline-block;
     margin-left: 8px;
     padding-left: 12px;
@@ -1175,7 +1208,8 @@ body.page-template .post-title {
     display: block;
     max-width: 126%;
     height: auto;
-    padding: 0.6em 0;
+    padding: 0;
+    box-shadow: 0 0 16px #ccc;
     /* Centers an image by (1) pushing its left edge to the
        center of its container and (2) shifting the entire image
        in the opposite direction by half its own width.
@@ -1294,6 +1328,7 @@ body.page-template .post-title {
 .post-head.main-header {
     height: 65vh;
     min-height: 180px;
+    max-height: 450px;
 }
 
 .no-cover.post-head.main-header {
@@ -1935,17 +1970,20 @@ body.page-template .post-title {
     }
 
     .blog-logo img {
-        height: 30px;
+        height: 60px;
     }
 
-    .menu-button {
+    .menu-button, .home-button {
         padding: 0 5px;
         border-radius: 0;
         border-width: 0;
-        color: #2e2e2e;
+        color: #fff;
         background: transparent;
     }
-    .menu-button:hover {
+    .no-cover .menu-button, .no-cover .home-button {
+        color: #2e2e2e;
+    }
+    .menu-button:hover, .home-button:hover {
         color: #2e2e2e;
         border-color: transparent;
         background: none;
@@ -2004,6 +2042,10 @@ body.page-template .post-title {
 
     .post-date {
         display: none;
+    }
+
+    .post-comments-count {
+        border-left: none;
     }
 
     .post-template .post-header,

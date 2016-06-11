@@ -1,25 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     {{!-- Page Meta --}}
-    <title>{{meta_title}}</title>
+    <title>{{meta_title}} | {{@blog.title}}</title>
     <meta name="description" content="{{meta_description}}" />
+
 
     {{!-- Mobile Meta --}}
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     {{!-- Brand icon --}}
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+    <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
     {{!-- Styles'n'Scripts --}}
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
-
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
@@ -34,10 +51,10 @@
         {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
         {{{body}}}
 
-        {{!-- The tiny footer at the very bottom --}}
         <footer class="site-footer clearfix">
             <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org" rel="nofollow">Ghost</a><br>
+            hosted on <a href="https://m.do.co/c/b08e18462611" rel="nofollow">Digital Ocean</a></section>
         </footer>
 
     </div>
@@ -46,10 +63,16 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
-    {{!-- Fitvids makes video embeds responsive and awesome --}}
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400&subset=latin,latin-ext" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
+
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
     {{!-- The main JavaScript file for Casper --}}
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
+    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
+
+    <script id="dsq-count-scr" src="//typeofweb.disqus.com/count.js" async></script>
 </body>
 </html>
