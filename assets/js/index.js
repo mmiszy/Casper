@@ -8,8 +8,24 @@
 
     var $document = $(document);
 
-    $document.ready(function () {
+    function addHeadersLinks() {
+        var headers = $('article .post-content').find('h1, h2, h3, h4, h5, h6');
+        headers.each(function (idx, el) {
+            var $header = $(el);
+            var id = $header.attr('id');
+            if (!id || id.length === 0) {
+                return;
+            }
 
+            var $link = $('<a></a>')
+                .attr('href', '#' + id)
+                .addClass('header-link');
+            var icon = 
+            $header.prepend($link);
+        });
+    }
+
+    $document.ready(function () {
         var $postContent = $(".post-content");
         $postContent.fitVids();
 
@@ -19,6 +35,10 @@
             e.preventDefault();
             $("body").toggleClass("nav-opened nav-closed");
         });
+
+        if ($('body').hasClass('post-template')) {
+            addHeadersLinks();
+        }
 
     });
 
