@@ -605,7 +605,7 @@ body.nav-opened .site-wrapper {
     overflow: hidden;
 }
 
-.home-template .main-header, .archive-template .main-header, .tag-template .main-header {
+.home-template .main-header, .archive-template .main-header, .tag-template .main-header, .author-template .main-header {
     background-size: cover;
 }
 
@@ -1806,6 +1806,11 @@ body.page-template .post-title {
     width: 45%;
     float: right;
     text-align: right;
+}
+
+.poweredby address {
+    font-style: normal;
+    font-weight: bold;
 }
 
 .copyright {
