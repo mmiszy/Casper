@@ -605,7 +605,7 @@ body.nav-opened .site-wrapper {
     overflow: hidden;
 }
 
-.home-template .main-header {
+.home-template .main-header, .archive-template .main-header, .tag-template .main-header {
     background-size: cover;
 }
 
@@ -1214,6 +1214,15 @@ body.page-template .post-title {
        center of its container and (2) shifting the entire image
        in the opposite direction by half its own width.
        Works for images that are larger than their containers. */
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%); /* for Safari and iOS */
+    -ms-transform: translateX(-50%); /* for IE9 */
+    transform: translateX(-50%);
+}
+
+.post-content iframe.large {
+    width: 126%;
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
@@ -2125,6 +2134,12 @@ body.page-template .post-title {
 
     .post-content img {
         padding: 0;
+        width: calc(100% + 32px); /* expand with to image + margins */
+        min-width: 0;
+        max-width: 112%; /* fallback when calc doesn't work */
+    }
+
+    .post-content iframe.large {
         width: calc(100% + 32px); /* expand with to image + margins */
         min-width: 0;
         max-width: 112%; /* fallback when calc doesn't work */
