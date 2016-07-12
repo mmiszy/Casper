@@ -32,6 +32,14 @@
             {{#if location}}<span class="author-location icon-location">{{location}}</span>{{/if}}
             {{#if website}}<span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>{{/if}}
             <span class="author-stats"><i class="icon-stats"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+            <div class="social-links">
+                {{#if facebook}}
+                    <span class="author-link icon-facebook"><a href="https://facebook.com/{{facebook}}">Napisz na Facebooku</a></span>
+                {{/if}}
+                {{#if twitter}}
+                    <span class="author-link icon-twitter"><a href="https://twitter.com/{{twitter}}">Śledź mnie na Twitterze</a></span>
+                {{/if}}
+            </div>
         </div>
     </section>
 {{/author}}
