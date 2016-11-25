@@ -385,6 +385,10 @@ pre {
     border-radius: 3px;
 }
 
+pre[class*="language-"] {
+    margin: 0 0 1.75em 0 !important;
+}
+
 pre code, pre tt {
     font-size: inherit;
     white-space: pre-wrap;
