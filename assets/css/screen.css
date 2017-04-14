@@ -1236,6 +1236,10 @@ body.page-template .post-title {
     transform: translateX(-50%);
 }
 
+.post-content .fluid-width-video-wrapper iframe.large {
+    position: absolute;
+}
+
 .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
     position: relative;
     padding-left: 60px;
@@ -2172,7 +2176,7 @@ body.page-template .post-title {
     }
 
     .post-content iframe.large {
-        width: calc(100% + 32px); /* expand with to image + margins */
+        width: calc(100% + 32px); /* expand width to image + margins */
         min-width: 0;
         max-width: 112%; /* fallback when calc doesn't work */
     }
